@@ -1,0 +1,73 @@
+<table>
+    <thead>
+        <th>Index</th>
+        <th>Name</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pokemon of pokemons; let i = index">
+            <td class="pokemon-td" [class.cool-bbol]="pokemon.isCool">{{i}}:{{pokemon.name}}</td>
+            <td>{{pokemon.name}}</td>
+            <td>{{pokemon.type}}</td>
+            <td>{{pokemon.isCool}}</td>
+        </tr>
+        <tr *ngFor="let pokemon of pokemons; let i = index">
+            <td class="pokemon-td" [ngClass]="{'cool-bool': pokemon.isCool}">{{i}}:{{pokemon.name}}</td>
+            <td>{{pokemon.name}}</td>
+            <td>{{pokemon.type}}</td>
+            <td>{{pokemon.isCool}}</td>
+        </tr>
+        <tr *ngFor="let pokemon of pokemons; let i = index">
+            <td [ngClass]="{'cool-bool': pokemon.isCool}">{{ pokemon.id}}</td>
+            <td>{{pokemon.name}}</td>
+            <td>{{pokemon.type}}</td>
+            <td>{{pokemon.isCool}}</td>
+        </tr>
+
+
+        <tr *ngFor="let pokemon of pokemons; let i = index">
+            <td class="pokemon-td" [style.backgroundColor]="(pokemon.isStylish ? '#800080': '')">{{i}}:{{pokemon.name}}</td>
+            <td>{{pokemon.name}}</td>
+            <td>{{pokemon.type}}</td>
+            <td>{{pokemon.isCool}}</td>
+        </tr>
+        <tr *ngFor="let pokemon of pokemons; let i = index">
+            <td class="pokemon-td" [ngStyle]="{'backgroundColor': (pokemon.isStylish ? '#800080' : '')}">{{i}}:{{pokemon.name}}</td>
+            <td>{{pokemon.name}}</td>
+            <td>{{pokemon.type}}</td>
+            <td>{{pokemon.isCool}}</td>
+        </tr>
+    </tbody>
+</table>
+<!--title ngIf -->
+<input type="text" [value]="pokemonName" (input)="handleChange($event)"/>
+<!-- <p>{{ pokemonName}}</p>
+<div *ngIf="!pokemonName">
+    No search results found....
+</div> -->
+<!-- same code with below -->
+<ng-container *ngIf="pokemonName.length; then pokemonList; else noPokemon"></ng-container>
+<ng-template #pokemonList>
+    <h1> All pokemon available</h1>
+    ........
+</ng-template>
+<ng-template #noPokemon>
+    <h1>No pokemon availabel.
+    </h1> 
+</ng-template>
+
+<!-- ngfor -->
+<table>
+    <thead>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Type</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let details of detail; let i = index">
+            <td>{{i}}</td>
+            <td>{{details.name}}</td>
+            <td>{{details.type}}}</td>
+        </tr>
+
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Classes</h1>
+<p>Creating two car objects from a car class:</p>
+
+<p id="demo"></p>
+
+<script>
+    class Car{
+        constructor(name,year){
+            this.name = name;
+            this.year= year;
+        }
+    }
+
+    const newcar= new Car("Tusan",1987);
+    const newcar1= new Car("Prado", 1988);
+
+    document.getElementById("demo").innerHTML =  newcar.name + " " + newcar1.name;
+
+</script>
+
+</body>
+</html>
