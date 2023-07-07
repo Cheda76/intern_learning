@@ -1,0 +1,46 @@
+<p>dierective-example works!</p>
+<!-- <div>{{courses[0]}}</div>
+<div>{{courses[1]}}</div>
+<div>{{courses[2]}}</div> -->
+<!-- <div *ngFor="let course of courses;">
+    {{course}}
+</div> -->
+<div *ngIf="showCourses">
+  <div *ngFor="let course of courses;" appFontSize>
+    {{course}}
+    <button (click)="selectCourseHandler(course)" >Select</button>
+  </div>
+</div>
+
+<button (click)="showCoursesHandler()" >Show courses</button>
+
+<div [ngSwitch]="currentCourse">
+
+  <div *="Web">
+    3 months
+  </div>
+  <div *ngSwitchCase="'DSA'">
+    6 months
+  </div>
+  <div *ngSwitchCase="'ML'">
+    9 months
+  </div>
+  <div *ngSwitchCase="'AI'">
+    12 months
+  </div>
+  <div *ngSwitchDefault>
+    3 months
+  </div>
+</div>
+
+<h1 [ngStyle]="selectedStyle">
+  Style is being apply dynamically
+</h1>
+<button (click)="toggleTheme()">Toggle Theme</button>
+
+<div [ngClass]="selectedClass">
+  The class is being changed dynamically
+</div>
+<div [style.color]="customColor">Type in the box to change the text color.</div>
+
+<input (ngModelChange)="customColor">
