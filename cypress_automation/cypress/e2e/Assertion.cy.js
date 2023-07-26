@@ -10,7 +10,6 @@ describe("Assertion demo", () =>{
         // cy.url().should('include','orangehrmlive.com')
         // .should('eq','https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
         // .should('contain','orangehrm')
-
         // another way
         cy.url().should('include','orangehrmlive.com')
         .and('eq','https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
@@ -23,6 +22,7 @@ describe("Assertion demo", () =>{
         cy.get('.orangehrm-login-branding > img').should('be.visible')//logo visible
 
         .and('exist')//logo exist
+        cy.wait(2000)
 
         cy.xpath("//a").should('have.length','5') //No. of links
 
